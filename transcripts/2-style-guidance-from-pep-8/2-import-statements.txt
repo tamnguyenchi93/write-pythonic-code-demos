@@ -1,0 +1,22 @@
+The first PEP 8 recommendation that we are going to look at is around importing modules and packages.
+So let's switch over here to PyCharm and have a look at some not-so-great code.
+You can see on line seven here, we are importing collections, the recommendation from PEP 8 is that all module level imports should go at the top, unless there is some sort of function level import you are doing kind of unusual, conditional things.
+And notice there is a little squiggle under here, and that's actually PyCharm saying "here is a PEP 8 violation, a module level import is not at the top of the file." So we can take this and put it at the top of the file, now everything is happy.
+So let's look at few other things we can do, we could say "from os import change directory, change flags and change owner." This is a good way to import a bunch of items from os and not have to state their name, we could do this a different way, using what's called a wildcard import, we could say from os import *, now that would import the three listed above, but it would also import every symbol defined in os.
+Now what's wrong with this? Imagine up here I imported another module, from my module import path, so if I write this code, line four and line six, path is not going to be what you think it is, because we are importing path here but then we are importing every symbol from os using what is called the wildcard import, and os also has a path so it is going to overwrite the definition of path here.
+So it's why it's always recommended to use this style of importing.
+You may wonder why this is gray in PyCharm, PyCharm is just trying to help us out saying "here are some unused imports you can actually remove", but if I write something like "c = chdir", then that part will go away.
+But of course, because we are importing the same thing twice basically it's also saying, I'll move that.
+Here we go, so now it says "you are using change dir, change owner but not change flags", down below it's using "change owner".
+All right, now "change flags", if I do something with that, it also lights up.
+All right, so there was never a problem with that import, that was just PyCharm trying to tell us "hey, look out, you are actually not using that import." Another mistake that people make is they might say something like this, "import collections, os" and let's say "multiprocessing", they may put multiple imports on a single line.
+That also works just fine, however, again, PEP 8 recommends that you put one import per line so it's very clear line by line what you depend on here, so we could fix this by saying, let me just put a "no:", something like that, and we could of course fix this, like so, "import os", "import multiprocessing".
+So this would be the recommended way to write what was on line four.
+So let's look at that import guidance a little more clearly.
+Here we have at the top two bad styles of imports, first line: "import sys, os, multiprocessing", on a single line; PEP 8 says "do not import multiple modules on a single line", and avoid "from module import star", these wildcard imports because you may accidentally, unknowingly overwrite other imports.
+So we have our better set of imports, "import sys, import os, import multiprocessing", and these of course are going to allow us to use "module name.symbol" name so "os.path" for example, in this sort of namespace style, and that's really nice to know where the particular symbol that you are working with, like "path", where it came from.
+If you don't want to use that namespace style, you can use the final import we have here, "from os import path, change mod and change owner".
+PEP 8 also have some guidance on the order and grouping of your imports.
+It says the standard library imports should go at the top, related third party imports should go in a little section below that and then finally, local app other models within your own code should be put last.
+Of course, all three of those go at the top of the file.
+Another thing that's nice about PyCharm - it does this for you automatically if you hit Command+Alt+L for reformat file.

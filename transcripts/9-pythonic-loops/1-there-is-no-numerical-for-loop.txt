@@ -1,0 +1,19 @@
+Loops in Python are a little bit different than loops in other languages.
+You'll see that there is much more collections philosophy underlying them.
+Let's start with the basics.
+There is no numerical loop in Python, there is no "for" loop, like C++, C#, Java, Javascript, they have this way of walking through a number and incrementing it usually to pull items out of an array, so I imagined what would that look like in Python if we had a numerical "for" loop, something like: "this for i = 0; i less than len(data); i++ " we are going to go work with items.
+Well, that doesn't exist.
+Sometimes, people try to work their way around it using the loops that do exist and recreating this more or less.
+Look, we've done it, we've taken the initialization of the variable, moved before loop, we have the test and now withing the body loop we do the increment.
+Perfect.
+No, technically that works but this is also super non-Pythonic so let's look at some code that is.
+All right, here in PyCharm you can see I kind of sketched out what that might look like, well as you saw we can well, first of all, this just put any ideas out of your head, this doesn't round right, obviously.
+There is no "for" loop, but we can fake this idea we can say the "i = 0" goes here, this can be a "while" loop, we can do our test there and this increment bit, we can put that down here.
+Like so, we don't have "++" but we do have a "+= 1", let's see if it works, it should put out 1 and 7 then 11, oh but of course, it does not, let's do this.
+Now it prints out the index and it prints out the value.
+All right, this is not Pythonic, so we'll just make a note: "No, NOT Pythonic".
+So of course, what is the proper way to loop through these items? "for item in the collection" and let's print this out, instead of worrying about the index, we just have the item let's put a new line in between, there: 1, 7, 11.
+Perfect.
+No fuss, no muss, just go.
+So, there is no numerical "for" loop or faking it like this, also not Pythonic, we'll talk about what you can do when you really need that later, but typically, write loops like this.
+OK, in a graphic, no numerical "for" loop, instead just loop over the data, usually the goal is to get at the underlying items and some sequence anyway.

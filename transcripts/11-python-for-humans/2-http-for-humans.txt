@@ -1,0 +1,22 @@
+The first of the two packages that we are going to look at is the Requests package.
+It turns out the Requests is the most popular package for Python, let's look at its website really quickly.
+So over here you can see HTTP for Humans, very nice, "the only Non-GMO HTTP library for Python, safe for human consumption", basically the idea of Requests is the urllib, urllib2 that are in Python, are cumbersome and hard to work with and overly complicated.
+Here is a re-imagine of it by a guy named Kenneth Reitz who does amazing work to make it much more delightful and easy to work with.
+You'll see this package gets a little bit of traffic, so if I search for downloads, Requests is one of the most downloaded Python packages of all time pulling in over 7 million downloads every month.
+Think about that, 7 million downloads a month.
+And it's been around for really long time.
+There is actually some talk about making Requests the new urllib more or less like bringing this into the standard library to keep Requests more agile, they decided to keep it out, nonetheless, Requests is even recommended over the built in URL libraries: urllib, urllib2 and so on.
+So let's do something awesome with Requests, so over here we have a URL to the omdbapi, that's the Open Movie Database API, and we can do search here and get the data back as JSON and do a search for some text so we are going to ask the user to enter some kind of text like "enter the name of a movie" or whatever and it will go pull that down.
+We did play with this in another example previously but we didn't focus on Requests.
+So in order to do this, the first thing we have to do is get started.
+We've already installed Requests, and of course, we talked about pip and packaging and pip installing various packages but also from PyCharm we can come over here and look at our current environment and see that we already have Requests installed but in fact it's a little bit out of date we won't mess with it, but we could upgrade it.
+If we didn't have this installed we could hit "+" and say "hm, I am looking for Requests", it turns out there is a lot of stuff that's built upon Requests here, did you know there is requests-middleware, requests-guards, requests-ftp, requests-cloudkit? All of these things, but here is the one that we want and we can just hit "boom, install" but great, it's already installed.
+So let's just use it, remember "import antigravity"? Well, here is "import requests".
+So the way it works is we get a response back and we give it some URL here, and URL we are going to construct from the user text, we probably should check "if response.status_code" is not equal to 100, print, "wow, that is code such and such".
+All right, so hopefully we don't end up in that case, but you never know.
+Now let's go down here and actually get the data, so we made this request and everything was OK, we'll say that the data is going to be response.json, so that's going to actually finish downloading all the text and the response, convert it from json into a dictionary so this is going to be like a movie lookup.
+Now, the format of this json is a little funky, if we actually want to search data, we have to go and ask for the search text here and then we can say "for m in search" and we could print out just the title of the movie we are looking for, and that comes in as title, something like that, and great, that's it.
+Access is API, download it, possibly even authenticate against it, all we'd have to do is put the user name and password in here and we are done.
+So this is just part of the power being leverage all these amazing packages on PyPi, let's see if it works, that would be a good thing.
+So I want to search for let's say "Night Rider" can we find it? I don't see Night Rider but there sure is a bunch of stuff about nights, let's try one more, see if Silicon Valley is there, Silicon Valley fantastic, the Spirit of Silicon Valley, the Hermits of Silicon Valley, all those things, and we didn't get just the title back, we got lots of data, like that, we just happened to only be printing out the title.
+So here is one piece, one example of looking just beyond the standard library out in the broader ecosystem where you'll find amazingly powerful packages to help you, here it is in a graphic, we'll say "import request", generate the URL, "requests.get" given the URL, check the status code, otherwise, we'll just call .json, pull out the data boom, couldn't be easier.

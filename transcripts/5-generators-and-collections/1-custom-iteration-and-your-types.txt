@@ -1,0 +1,23 @@
+Let's talk about collections, list comprehension, generators and generator expressions.
+All of these concepts are extremely central to this idea of Pythonic code, many of them are very unique to Python actually.
+The first item we are going to look at is iteration.
+We saw that Python does not have a numerical "for" loop, there is no "for(i=0; ;i++)" style loop, you literally work with sequences, you iterate over collections and so on.
+There is many built in types that work that way such as lists and dictionaries and so on, but if we had our own type we defined, we might want to be able to iterate over it as well.
+Here is the ShoppingCart class, and you can add items to it that you are going to buy later, possibly we'd like to create an API such that you can iterate over the shopping cart and get the items back.
+Let's have a look over in PyCharm and see how that goes.
+So here is basically the same code and we are defining this thing called the CartItem and it's just really a container for a name and a price, down on line 15 here, we are going to add three items to our cart, a guitar, a cd and an iPhone.
+What if we wanted to loop over our cart? Maybe it works right now, let's just try, so if we want to write the code "for item in cart:", maybe we'll just print this out, so we'll print, let's do the name and we'll do the price here, we'll do a little format so we'll say "item.name, item.price".
+And let's do a little header here, so items in your cart.
+You can see that PyCharm is warning us we are kind of going down a bad path here, so it's like "this is not going to work", but let's go ahead and give it a try, just to see what the error is.
+Boom, ShoppingCart object is not iterable.
+OK, so we'd like to write this code but how do we do it? the ability to add iteration to a type is based on the Python data model, which all the dunder methods comprise.
+So we can come up here and add this particular one, we can say "def __iter__" and form this method we have to return iterator object, which has a length and next.
+If we just want to loop over the items as they are, we can leverage the underlined collection class itself and it knows how to create one of these so we could just say "self.items.__iter__" go back down here, PyCharm is happy, that's a good sign, let's see if it works.
+Boom, "items in your cart: guitar, cd, iPhone".
+Beautiful.
+What if we wanted to have a little more control than just exposing the underline structure, or underline item here, what if we wanted to say "sort these and then hand them back"? We can come over here and we could say "sorted_items = sorted" and we could pass self.items, and we could pass a key selector, we could say here is a lambda that given an item is going to return item.price, and then we can return sorted_items.__iter__ now you can see we have out items but sorted, not necessarily the same way they were stored before and we could even go and say I'd like the negative price here, so now we have the most expensive ones first.
+So you might think that this is fairly distasteful here and I don't really like it either, we are going to talk more later about generators, but if you are familiar with the yield keyword, we could write something like this: "for i in sorted items yield i", we could write this code as well, and this would do basically the same thing, it returns the generator rather than list but that's fine.
+So take your pick, we'll talk more about yield later.
+OK, we saw that in order to add iteration to our shopping cart, we just need to add a __iter__ method here rather than just exposing the underline self.items we are actually exposing a sorted version of it as a generator.
+So now we come over here we add some items into it and if you want, we can do a "for...in" loop over our cart point out the items as you saw and we can grab once we have them, the name and the price and print those out.
+So it's super easy to add custom iterations to your type and building on this Python data model with the dunder methods sometimes called magic methods is a very Pythonic thing to do.

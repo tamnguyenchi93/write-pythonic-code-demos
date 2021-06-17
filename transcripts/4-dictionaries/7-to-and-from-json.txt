@@ -1,0 +1,15 @@
+When I introduced a section on dictionaries I said that JSON and dictionaries are basically isomorphic, there is a one to one mapping between these things.
+Let's explore that relationship really quickly here.
+So here is some text, just a single string, multiline string here, and it's in the JSON format.
+We'd like to take this, which looks extremely like a dictionary in Python, in fact if I take this, say "print(type(movie_json), movie_json)" and I run this, you'll see this is a string.
+However, if I say "movie_dictionary = " just copy and paste out of there and indent a little and I do the same thing, this is actually a dictionary and it's pulled this value, I mean, it's basically like you could take the text or JSON and evaluate it, almost, right.
+So, that's really cool, but given this text, at runtime, how do I dynamically turn this into JSON because copy and paste static data doesn't make any sense, so we are going to use the JSON module, so "import json", spell correctly, we'll come down here, let's put this down at the bottom for a minute, we'll come over here and we'll say "movie_data ==" we just say "json." Now notice there is a "load", which actually takes a file pointer and a "loads", which loads from the string, so we'll say movie_json, so let's just print this out here.
+So we'll do something similar, we'll print the type of movie_data and then let's print out movie_data itself.
+So if we run it, we actually successfully parse this JSON text which in reality probably comes somewhere off the web or off the file system, we parse that into a dictionary and here is the dictionary printed back out.
+So we could answer questions like "The title is {}.format()" and we'll just say movie_data.get(title), boom.
+"The title is Johnny 5".
+So, that's a super nice way to go from JSON into Python dictionaries, what about the reverse? So if I have some dictionary, let's just take the same data and reverse it, we can say so let's just call it movie_json_text_2, and we can get that by just saying "jason.dumps()" and if we give it a dictionary it will dump that out as JSON.
+So here and we can just print type of this thing and then print that.
+Perfect, dictionary here is the dictionary data, used it to pull some data back, and we want to go the other way to send it across the wire, save it to a file system, we now have a string and it's actually the JSON text here.
+So we used the JSON module to make this transformation between JSON and dictionaries, "loads" for strings, "load" for file pointers, and then "dumps" for string, "dump" for file pointers.
+So to review in a graphic, here we have "import json" so we can use that module, we have string, which presumably comes off the internet or off the file system, which is a set of JSON text that we want to parse, so we can parse that into an in-memory dictionary saying "loads", now movie_data is a dictionary, if we want to save it back to the file system or otherwise treat it as a string, "json.dumps", boom, done.

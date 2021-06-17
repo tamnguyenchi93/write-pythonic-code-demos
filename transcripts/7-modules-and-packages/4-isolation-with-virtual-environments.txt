@@ -1,0 +1,12 @@
+Let's talk about isolating your dependencies and your versions for your external packages, from all the other Python projects on your OS.
+Here we are in the terminal, and I am in this directory here that I have a bunch of Python environments, and I'd like to create a new Python installation basically, for a new web app I am going to work on, or any kind of app, really, I'd like to be able to control the version of Python is there as well as the packages that are installed and their versions independent from everything else on my system.
+So I can use virtual environments for this, in Python 3, we have a "venv" command and we can also use the virtual environment's external package, we can also use the virtual environment's external package, which works with all versions of Python.
+So I'll go and use that here but they work exactly the same.
+So I want to create a directory here that's going to contain my Python environment so I'll say "virtual"- let's make sure we have the right one first, "virtualenv", OK, this is going to be the one for Python 3.5, so good, so I'm going to say this, and I'm going to give it a folder, let's just say sample_web_env, so we know it's an environment, not the web app itself.
+Spelling is hard, so we can see it's created a version of Python here based on Python 3.5 and installed the necessary tools, basically that we need to add more packages.
+So, now if I say "which pip", it doesn't yet have this environment active, the creation of the environment doesn't activate it, so the next thing we need to do is say dot(.), so the first dot(.) means apply this to this shell rather than a separate one for the execution, and we'll go in the "sample...
+bin activate", we run this, now our prompt changes and more importantly, if we ask the same question - "which pip" - now it's this one, if we ask "which python", it's this one.
+OK, so we're ready to use that, let's say pip list to see what we have installed, we just have those 3 that were installed there so we could go install something like I could say "pip install requests", and it's gone and downloaded, now if I ask what's installed, I just have this.
+So I can have version 2.10.0 of request regardless of whatever else is installed, upgraded, downgraded, in the rest of my OS.
+All right, let's go and upgrade pip.
+OK, so here is our sample environment, we'll be using this in the next section.

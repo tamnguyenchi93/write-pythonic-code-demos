@@ -1,0 +1,23 @@
+The first Pythonic technique that we can use to address this what you might call a shortcoming, at least a different way of programming around method overloading is with default values.
+Let's have a look.
+Here in PyCharm we have some simple method called display_greeting, it's completely contrived but it'll totally work for our purposes.
+You give it a name, you give it a greeting, so the name might be Jeff, the greeting might be "Good morning" and it will actually say it over and over and over so you can get really excited and say "Good morning Jeff, Good morning Jeff, Good morning Jeff", and in fact this one will do that 3 times, this one on the other hand will just say "Good day Michael", one time.
+However, there is a problem with these down here, we might like to write code like this, we might just like to say well, let's just greet Mark, and there might be some way to write code that there is a default greeting to be given like "Hello", and the number of times might be 1 so like if we don't pass the greeting and the number of times, we'd like to just say "Hello Mark", one time.
+But if we say "Mark" and "Good afternoon" we'd like it to say "Good afternoon Mark" one time.
+Of course we can specify all the details and say "Good afternoon Mark" twice.
+How do we go about this in Python? Well, we use default values.
+First of all, it's not going to love it the way it is, you can see PyCharm's indicating issues and if we'd run it you will find them, the first part worked just fine, "Good morning Jeff" and then did that 3 times, the little error snuck in between there, and then it said "Good day Michael" and then we started hitting the trouble.
+Click here and it will take you right to the line of trouble, yeah that's the one we expected.
+So we can actually go up here and instead of having different signatures, we can have default values, so if we'd like to have default greeting we can come over here and we can say, right in line, "Hello".
+So if we wanted to say Hello- name, if you don't specify it, then we can do it this way.
+Now, this would almost fix this line, except for we still need to deal with times and the default values have to go after all the non-default values, so let's set this to 1, that seemed reasonable; now, this actually fixes all of these errors, let's go.
+Perfect, look, if this one here "Hello Mark", this one said "Good afternoon Mark" one time, this one said "Good afternoon Mark" two times, like so.
+Finally with these default values we can actually put them in any order we want, here we don't say the name of them we just say "Good afternoon and two", we use them as positional values but I could say something like this, I could say greeting is "Yo!", name is "Michael" and times is 4.
+So we can put these in any order we want using keyword arguments and we get "Yo Michael" 4 times.
+More importantly, this lets us two things like skip over, let me keep this here for you, more importantly his lets us skip over some of the default values, so here I can say name is Michael, skip over greeting and use its default "Hello" and then let's just say 2 times here.
+So they should say "Hello Michael" 2 times at the end.
+"Hello Michael", 2 times at the end.
+All right, so in Python default values play a really important role in doing what method overloading based on signature might have done in other circumstances.
+We'll see some more Pythonic ways to deal with this as well, some other functional techniques we can use.
+So, specifying default values here, lets us perform what in languages like C# and C++ often are done through signature overloading and having multiple methods that are distinguished by signature.
+However, there is a warning here, so for these default values there are some extremely serious gotchas and certain circumstances will look at those at the end.

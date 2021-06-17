@@ -1,0 +1,20 @@
+This tip is nice and short but really helpful.
+So let's talk about how we choose a random item.
+Here in PyCharm, first I want to show you the bad what I am calling C-style but this appears in many languages.
+So we have these letters, and letters and numbers, we'd like to randomly pick one and show it to the user.
+So the most natural thing to do coming from a language like C is to create a random number that will be a proper index into that list, so we'd say "index = rand", we create "rand" and "n" be from 0 to the "len" of letters.
+And we'll say "item = letters of index".
+Now, this actually includes the upper bound so we need to take one away from it to make sure we don't have an off-by-one error, but of course, this is something you have to go look up in the documentation to see - is it including the upper bound and lower bound or just lower bound? Something like this.
+And we can just print out the item, if I run it, apparently "y" is the randomly selected one run it a few more times, "zero", "w", "k", awesome.
+So what's wrong with this? Well, there is a couple of things.
+One, I have to go and calculate the length I have to know this is including the upper bound when I ask for these random numbers, so I have to do minus 1, oh and I forgot to check that there is actually an item in here that the index is not negative, something like that.
+So let's write the Pythonic version.
+You'll see it's easier to read, it's shorter, it's safer, everything you want.
+So, I want a random item, and given a sequence, I can just say "random, choose a random item", from that sequence.
+Done, I don't have to think about what the documentation says about upper and lower bounds, I don't have to verify anything, just print out the item, run it again, "c" was chosen by the C-style, and "d" by the Python style.
+"b", "z", "4", "t", and so on.
+Simple, sweet, but very effective and once you start using it, you will never want to go back to the C-style.
+So here is that code in a graphic.
+We have the bad style using the "random int", oh and you can see in my slide we actually have a bug about the upper bound, how interesting, huh? There, I fixed it, but it was interesting that we had this place where we could introduce the bug and of course we get the index, we use the index to index into the letters, get the item and then we can print it out.
+The Python one instead let's just go random that choice, from a sequence, boom, there you go.
+In Python it's generally preferable to use declarative code rather than procedural code, and this is a little step in that direction.

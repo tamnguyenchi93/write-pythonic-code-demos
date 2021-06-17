@@ -1,0 +1,18 @@
+Sometimes you need to return more than one value from a function.
+Let's see what the story of that is in Python.
+So over here we have a non-Pythonic way to return more than one value from a function, now in Python, we don't have the concept of reference parameters, passing a pointer by reference, we just have passing the pointer, which lets us work with the values.
+Some languages you can do things like this, you can say "int & val 1, int & val 2", that would be like C++, and say C# you might say like this: "out" or "ref" or "in out", things like this, we could even, if this was pass by value, we could even pass a pointer and then let it change, there is lots of things that some languages let us do, Python doesn't let us do that.
+So here is one way which we can kind of do this in a kind of a hokey way so here we are passing in some value to work with, we want to compute 2 values and return both the values, so here we are going to pass in a list, and if the list is empty we are going to make a spot for 2 entries, otherwise, if the list is not length 2, we are going to complain and say "Oh this is not really what we are looking for", we wanted either a list with 2 elements or an empty list so that we can stuff the two return values into them.
+Do a quick little bit of math and back here we get the values out and we pull them out, this is super non-Pythonic.
+This is bad, so the question is: "Can we do better?" First of all, let's see if we pass in 7 that we are going to get the right values.
+49 and 18.52 Those are right values, but the code, not so right, so let's take this and have a good version.
+Keep that one down here, we'll make this one to be Pythonic, we'll just call it out_params, and we are going to do something entirely different.
+We are going to get rid of all the stuff, this link, all this junk, watch how much simpler this gets.
+So we'll have, let's say, return value 1, those are not good names in general for variables but maybe just to make a case of look these are the two values we are returning, we'll call of this.
+So we can come down here and we can return a tuple and we can say that just say "r1, r2", that defines a tuple, that's one thing, we'll return that.
+That's a little bit like what we were doing before with our list, so we could like say "return a list" but the thing that's cool is the tuple unpacking lets us get at that value really easy, so we can come over here and we can say we would like to call this function out_params with the value 7, we'd like to capture the values, remember, it's coming back as a tuple, so we can unpack that into individual values and give basically the appearance that our method is returning more than one values, we can say "v1, v2 = this", I can print out let's say the good version instead of this funky stashing stuff in the list, we just say v1, v2.
+Now it literally looks like this method returns more than one value, but the trick that facilitates it is of course tuples and tuple unpacking.
+Perfect, besides a little bit of spacing, it looks identical.
+There, identical, so much better.
+So we saw we can fiddle with collection types to make it sort of possible to return more than one value, this is really a bad idea, don't do this kind of stuff, instead, leverage the ability to create and return as single tuple and then unpack them as if they were multiple values, so here we are calling compute values, return it to tuple, we are unpacking that into two variables we are calling "b2", and "b32", and we are printing them out.
+Wonderful.

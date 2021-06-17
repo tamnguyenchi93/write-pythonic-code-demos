@@ -1,0 +1,8 @@
+Our next category of Pythonic concepts and tips is going to be around functions and methods.
+Python is a multi-paradigm programming language, we can write procedural code, we could write object-oriented code, we could write functional code and with things like decorators we can even write aspect-oriented code.
+Python's functional support is very strong, you'll see the functions and methods are first class symbols and citizens in Python and they are highly flexible and powerful.
+When you define a function or method with a "def" keyword, you're really instantiating a function object and you can pass that object around just like you can pass a number or a string or an instance of a class.
+You'll see that those function objects can even be changed at runtime you could dynamically add a field to a function just by saying "function.value=something".
+Not saying that you should do that, but just considering the flexibility, right.
+Functions even allow you create things called closures, both inline functions as well as lambda expressions, that's a very powerful programming technique often used in places like Javascript for data hiding and encapsulation.
+And finally with things like lambda expressions we can even define small inline methods as little bits of executable code that we can pass around in super concise and composable ways.

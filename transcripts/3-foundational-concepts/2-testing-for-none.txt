@@ -1,0 +1,13 @@
+Next let's look at testing for a special case.
+Imagine that we are going to call a function and that might return a list and that list might have items in it or it might not, maybe we are trying to do some kind of search and there is just no results, and yet, if it was an unable to perform a search, we'd like to indicate that differently than if there is just no results.
+In that case, we can actually change our algorithm just a little bit and test for something different.
+Let's look at PyCharm.
+So here I have this function called find_accounts and you give it some search text; it checks to see if the database was available and if it's not available, it returns None, which we know is False.
+Otherwise, it's going to actually do a search against our database and return a list of account ids.
+However, there might not be any matching results in which case that list could be empty, so you might be tempted to say "if not accounts", then maybe I want to just like print something out like this, "else", let's actually try to say we are going to print the accounts.
+This part is going to work fine if there are results, we would list them.
+However, it could be that our search just returns no results, in which case this list would evaluate the False, so we are going to change this, we are going to test actually if accounts is None, when you are testing against singletons, and None is a singleton, there is only one instance of it per process, we'll use "is" and that actually compares at the pointers, not just the inherit truthiness of the objects or some kind of overloaded comparison operator.
+So now our code is going to work as expected, if we literally get nothing back because the DB is unavailable, then we can say oh, DB is not available, otherwise, we might print them out.
+And of course, that set might be empty, we might want to put in additional testing here to say "well, if it's empty" like your search works but there is no results, whatever.
+But the Pythonic thing here is to notice that we are using "is" to test against singleton and a special case of singletons of course is the None keyword, which is one of the most common.
+So here we have this in a graphic, so we are calling find_accounts, giving it some search text and we are going to get some results back and we want to make sure that not only is it truthy, but it's actually worth specifically testing that there is something we got back rather than a None pointer, so "if accounts is not None", and notice, when you negate "is", you say "is not", rather "than not account is", which would also work but is less Pythonic.

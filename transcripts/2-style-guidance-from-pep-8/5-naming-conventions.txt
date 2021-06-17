@@ -1,0 +1,21 @@
+Let's talk about naming conventions.
+PEP 8 actually says a lot about how you should name your functions, methods, classes, and other symbols in your code.
+Before we get to the specifics, I just want to give you one of my core programming guidelines around naming, and that is: Names should be descriptive.
+Let's imagine you are writing a function.
+If you write the function and then you start to put a comment at the top to describe what that function does, I encourage you to stop and think about just making the concise statement about what that comment is the name of the function.
+I am a big fan of Martin Fowler's reafctoring ideas and especially the "code smells" that he talks about, and "code smells" are things in code that are not really broken but they kind of smell off, like a function that is 200 lines long, it's not broken, it just doesn't seem right.
+It sort of smells wrong, right, so breaking that to a smaller bunch of functions through refactoring might be the solution.
+And when he talks about comments he says comments are deodorant for code smell, instead of actually fixing the code so it's remarkably descriptive and easy to understand, people often put comments to say "here is this really hard to understand thing, and here is the comment that says why it's this way or what it actually does or maybe in my mind, what it really should be named." So my rule of thumb is if you need a comment to describe what a function does, you probably need a better name.
+That said, let's talk about how PEP 8 works.
+So here is some code that is PEP 8 compliant.
+We have a module called data_access and modules should all have short, all lower case names and if needed for readability you can put underscore separating them.
+Next you see we have a content that does not change during the execution of our code, it's called TRANSACTION_MODE and I forced it to be serializable.
+These should be all upper case.
+Classes, classes have cap word names, like this, CustomerRepository, capital C capital R.
+Variables and function arguments are always lower case, possibly separated with underscores as well; functions and methods lower case, again, possibly separated with underscores.
+And if you happen to create your own exception type, here we might want to raise a RepositoryError and it derives from the exception class, when you have exceptions they should always be named in error, so "SomethingError".
+Here we have RepositoryError.
+As you have seen in other cases, PyCharm will help us here, notice I renamed other_method, here to be Javascripty style with the capital M and not the underscore, you hover over it PyCharm will say "no, no, no, you are naming your functions wrong." It'll even let us hit Alt+Enter and give us some options about fixing this up, it doesn't quite understand how to rename it for us but at least it gives us the option to go over here and do a rename.
+Now this is not this renaming in place, but this is a refactor rename across the entire project, so if we had hundreds of files, docstrings, that sort of stuff, this would fix all of those.
+It'll show us where it's going to change, here we don't have anything going on really so it's just this one line.
+Now, our warning is gone.

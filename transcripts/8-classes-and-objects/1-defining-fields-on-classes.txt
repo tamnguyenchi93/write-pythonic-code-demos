@@ -1,0 +1,32 @@
+Let's talk about the Python idioms on classes and objects.
+And let's start in the construction of classes, how do you build them up, how do you add fields and to a lesser degree when we get farther along, methods.
+So here I have a class defined called NotSoPythonicPet.
+And we are going to do several non-Pythonic things to it but let's start up by giving this pet a way to set a name and to set an age so that we can ask it, hey pet, what is your name, what is your age.
+So we can come over here and this is very non-Pythonic so don't do this, we can come over here and we can say "set_name" and give it a name here, and say "self.name = name".
+OK, that's great and we could do the same thing for age so now we can set the name and we can set the age.
+Now, there is nothing technically wrong with this code, we shouldn't do this but technically it's not wrong, these are just warnings saying "don't do" what we are doing here because it's not Pythonic, OK, so but we can come over here and say "cow.set_name()" and let's call it Betsy, and we could set its age and how old is this cow, 7.
+OK, so let's run this, make sure everything hangs together, we have a pet.
+Now this little string over right here, this is not the best description of our not-so-Pythonic cow, because we could say "hey, this is a pet, it's name is Betsy, it's age is 7", so why don't we do that.
+So a pet whose name is {} and age is {}.
+So now we have pet whose name is whatever the name is and the age is whatever the age is, so let's try this.
+Great we have a pet whose name is Betsy and age is 7.
+Now, technically, you can set fields on these types anywhere you want, within them, out here, I can also say "cow.happiness = 11", it's a very happy cow, probably one from those California milk commercials, and we could even incorporate the happiness up here and run it, and great, it's happy.
+What's wrong with this? Obviously, we should not be doing this.
+Why? Because, what if we forget to set the name for example, bam.
+Sorry, this pet has no attribute called name, that's unfortunate, isn't it.
+And even if we called all the methods, how are you suppose to know that you've got to do this, right? This is really a terrible way to create classes, let's go over here and turn, we'll get rid of all of these, we'll just comment those out.
+Forget this happiness bit for a minute, that was just playing around, OK, so how should we do it? Of course, we probably want to pass this to the initializer, if we did want to have the ability to set a name and set an age, we could leave this here and say "self.name = None", and "age = None", or maybe "age = 0", as it's unset, something like this.
+So run, that doesn't give us a great answer, but at least in the __init__ we know all the moving parts of our class, of our type.
+So, this is not, well, this type has a name field, if and only if you happen to call this other method but before that it doesn't, right, this is a terrible way to write code, so don't do this.
+And if you feel you must do something like this, at least initialize these to somewhere empty.
+But I am going to go ahead and say "let's not do this", let's instead...
+I'll leave this commented out for you, for the code you download, let's instead say "you have to supply a name and age to create this class", to create an object of this class, and we come down here to say "self.name = name" or in PyCharm you just hit Alt+Enter, and it will do that for you, and Alt+Enter and it will do that for you, and it does it of course, the way we are recommending.
+But now, we've got to supply a name and an age or it's going to crash as you can see, and Betsy's back.
+Let me show you one other way of adding fields to a class that works really well and is very common.
+So remember, in our slicing example we were over here doing this query against this measurement type, let's look at that measurement class, for a minute.
+This is a SQLAlchemy ORM-based class and it's mapped into our database, via SQLAlchemy, so basically there is a measurement table, corresponds to this class, now notice, here we are not using the __init__ we are actually defining the type by adding these class level fields, so we've got id, x, y and value, over here, notice we can say things like "cow.name" and that works fine, it runs fine, but we can't say NotSoPythonicPet.name Now, PyCharm finds it here but it probably shouldn't because if you run it, this type has no name, obviously.
+This is an instance level property, you can think that this is kind of a static level type of thing, as a static field from other languages if you will, so over here, if we write it like this, we get to write code like this, so here is how we actually wrote our query to do this, I want to create a "query(Measurement)", "filtering(Measurement.value > .9)", order_by(measurement.value.desc()), things like that.
+OK, so this is another very common way to define fields of our class that I think is Pythonic, if you want them to be type level, if you want them to be only instance level, this is the way to do it.
+Here we have our NotSoPythonicPet, and it's doing a couple of things right and a couple of things wrong.
+First of all it has a "self.age = age", "self.name = name", in the __init__, that's good, but when we call "get_name" it happens to set another field, another attribute that only exists after you call "get_name" that turns out to be a really bad idea.
+And we can get the age back by saying "object.get_age" we should define our fields only in the __init__ or in the more static style that I showed you, a SQLAlchemy, and we should never create new fields outside of __init__ based on some behavior that makes it very hard to understand if and when those fields will be there.

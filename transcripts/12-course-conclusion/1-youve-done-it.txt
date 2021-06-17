@@ -1,0 +1,4 @@
+Congratulations, you've made it to the end of the course.
+You've completed over 50 examples contrasting non-Pythonic code with idiomatic Pythonic code.
+I hope you've learned a ton, I hope you have a new appreciation for some of the idioms built into Python, why we use them, what their advantages are and how you can apply them to your apps.
+The ones you've already built and the ones that you are going to build in the future.

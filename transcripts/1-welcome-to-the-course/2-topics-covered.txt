@@ -1,0 +1,21 @@
+What areas are we going to cover in this class? Well, we are going to start with the foundations and this concept called PEP 8.
+So, PEP 8 is a standardized document that talks about the way code should be formatted, and even some of the Pythonic ideas and Pythonic code examples.
+However, we are going to go way beyond PEP 8 in this course, and so we'll probably spend 15 minutes talking about PEP 8 and then we'll move onto other foundational items.
+Then we are going to focus on dictionaries, dictionaries play a super important role in Python, they are basically the backing store for classes, they are used for data exchange all over the place, and there are a lot of interesting use cases and ways in which dictionaries are used in a language.
+We are going to talk about a lot of interesting aspects and optimal ways to use and leverage dictionaries.
+Next up are working with collections, things called list comprehensions and generator expressions.
+And we'll see that Python has a lot of interesting flexibility around working with sequences, and we'll see the best way to do this here.
+Next, functions and methods.
+This will include the use of things like lambda expressions for small inline methods, as well as returning multiple values from methods and that sort of things.
+There is a lot to look at to write Pythonic functions.
+One of the great powers of Python is the ability to import or pip install a whole variety of packages, there is even a great xkcd cartoon about importing packages in Python, and we'll see that there are a lot of interesting Pythonic conventions around working with packages and modules.
+Next up, we are going to look at classes and objects.
+Object oriented programming in Python is a key cornerstone concept, even though it may play a slightly less important role than languages like Java and C#, still, classes are really important and there is a lot of idiomatic conventions around working with classes, we'll focus on that in this section.
+Python has a lot of powerful ways of working with loops, one of the first giveaways if somebody is brand new to Python is they are not using loops correctly, so we'll talk about when and how you should use loops and we'll even talk about the controversial else clause for "for...in" and "while" loops.
+Next, we'll talk about tuples.
+Tuples are smallish, read-only collections that let you package up related possibly heterogeneous data and pass it around, If we go into a basic database queries and the built in DB API you'll see that the rows come back as tuples.
+Some of the powerful techniques we'll learn about loops involve tuples and we'll see that tuples in general play a really important role, and there is some powerful and useful conventions around working with tuples in Python.
+Finally, we are going to look beyond the standard library, with something I am calling Python for Humans; one of the great powers of Python is the ability to go out to PyPi and grab one of the over 80 000 packages, install them using pip or something like this and add amazing powers to your application.
+People who are new to Python often skip this step and they look at something they have to do and are just like OK I think "I can implement it in these 20 lines of code".
+It's very likely that there is already a package out there that you can use to do this, so we are going to study two packages one for HTTP and one for database access to really bring home this point of look to PyPi and look to open source first before you start writing your own algorithms.
+Of course, over time, we may add more topics than what are described here, I am sure as more and more people take this class they will say, "Hey Michael, did you think about having this", or "I also consider this little bit to be idiomatic." Now I don't want to just grab every single detail that I can find, that is possibly Pythonic code and cram it in here, I want to cover the stuff that's most important and not waste your time, but of course, I am sure we'll hear about some new ones that are great and those may be folded in over time.

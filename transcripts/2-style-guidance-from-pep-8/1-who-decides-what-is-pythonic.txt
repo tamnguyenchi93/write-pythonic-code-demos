@@ -1,0 +1,10 @@
+Are you ready to start looking at some Pythonic examples and writing some code? I sure am, we are going to start by focusing on PEP 8.
+And some of the very basic structured ways in which you are supposed to write Python code, and then we'll quickly move beyond that to more the patterns and techniques that we are going to talk about for the rest of class.
+So one of the first questions about this idiomatic Python code, this Pythonic code, is "Who decides what counts as Pythonic and what doesn't?" The way one person writes code may very well be different than the way another person likes to write code, and this is one of the reasons that exactly, specifically stating what is Pythonic code and what does it look like is a challenge, but there is a couple of areas where we might take inspiration and pull together some sources and find some consensus.
+One of them is just the community.
+We can look at blogs, Stack Overflow, things like that and see what people are saying and what they agree or disagree upon.
+So, here is a question that asked what is Pythonic code and there is some examples given.
+Another area that people take inspiration from is something called The Zen of Python, and if you want to look at The Zen of Python, this is by Tim Peters you can just type import this inside of the REPL in any version of Python and you'll get this, and it's things like "beautiful is better than ugly, flat is better than nested, errors should never pass silently"; again, this is not super concrete but it does give some sort of structure about what is important and what isn't.
+We also have PEP 8, Python Enhancement Proposal 8, one of the very first official updates to the Python language was this thing called PEP 8 which is a style guide for Python.
+Mostly this talks about the actual structure of your code, like "you should use spaces, not tabs", those types of things, but it also has some guidance on patterns as well.
+We'll look at the few of the recommendations from PEP 8 before we move on to the more design/pattern/style recommendations.

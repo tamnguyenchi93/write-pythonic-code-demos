@@ -1,0 +1,11 @@
+Before we get to the actual code examples, let's really quickly talk about setup, tools, versions, that sort of thing.
+So, this course is built with Python 3 in mind.
+If you don't have Python 3 installed, you can get it for your operating system at python.org/downloads, or you can "Homebrew" or "apt get install" it.
+That said, most of the topics will actually be quite similar between Python 2 and Python 3, so we'll talk about Python 2 whenever there are significant differences.
+You may be wondering why are we talking about Python 3, when Python 2 is more widely used today in commercial applications.
+Let's look at Python over time and I think you'll see why I made this decision; if we start at the beginning, back in 1989, Guido started work on Python.
+1991, Python 1 came out, 2000 Python 2, and then, in 2008 Python 3 came out, and this was the first major breaking change to try to improve and clean up the language from all the years that had preceded it.
+Well, there was limited adoption because people already had large working code basis, a lot of the PyPi packages were not updated and so on, now if we look at today Python 3 has default as much more common than it has been but more importantly, if you look just four years into the future, not far at all, you will see that Python 2 is "end of life", there will be no more support for Python 2 in less than four years.
+And that means, whoever has projects, written in Python 2 have to not just start upgrading them, but complete the upgrades by then.
+So I expect there to be quite a pick up for Python 3 and I think focusing on Python 3 is very important going forward.
+Guido Van Rossum and the core developers feel this way as well, if you look at the last three keynotes, there has been something like this where Guido has gotten up at PyCon and said, "There is not going to be another version of Python 2, going forward it's all about Python 3." So, that's why this course itself is based on Python 3, even though like I said, differences are quite minor for the topics we are covering.

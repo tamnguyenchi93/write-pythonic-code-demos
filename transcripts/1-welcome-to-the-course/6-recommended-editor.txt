@@ -1,0 +1,9 @@
+So you can use any editor you would like, however, I am going to use PyCharm.
+One, because I think PyCharm is the best editor for Python, two- because PyCharm actually detects and warns you and sometimes even automatically corrects errors when you write code that is not Pythonic.
+This has to do with naming, this has to do with structure, all sorts of cool things.
+So I am going to be using PyCharm in the videos and I encourage you to get it as well.
+You can get it at jetbrains.com/pycharm.
+If we open that in our browser you can see here is the PyCharm page and if we go to download it, you'll see there are actually two versions, there is the PyCharm community edition which is 100% free, and there is the PyCharm professional edition and if you look at the place where the features are missing from the community edition, it's really around things like database, web and profiler information as well as some of their Docker support.
+So, for this course you should be able to use the community edition, I love this tool, I pay for it so I am going to be using the professional edition.
+It works great on OS X, on Windows and on Linux.
+So whatever operating system you use, you should be able to use it.

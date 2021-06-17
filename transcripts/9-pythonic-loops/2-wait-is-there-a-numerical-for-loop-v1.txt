@@ -1,0 +1,8 @@
+So it turns out sometimes when you really do just want to work through a sequence from numbers, in order: 1, 2, 3, 4, or maybe even evens for some reason: 0, 2, 4, 6 and so on, so in Python we actually do have a way to do this, so over here imagine we wanted this code that went from 0 up to 10 but not including it, what do we do? Remember, there is no "for" loop, so we just say "for i in" and we can create this generator that goes from 0 to 10, and we could even use the step size if we wanted to change the increment there, instead of "+= 1" we would do something else.
+All right, so this should go from 0 to 9 in the print out.
+And it does, so here we can use range, now range is considered slightly dangerous for large values here, in Python 2, because if we look at range, like so, it just says range 1 to 7, let's put a new line here, like so, it says just 1 to 7, this is technically a generator, but if we did this in Python 2 up here you can see this has just bin/python, which is Python 2, what we'll get at the bottom is no longer a generator, it's a list, so if you put 10 million here instead of using the generator with the yield slowly create this, it actually generates a list of 10 million items.
+All at once.
+And then, lets you loop over it.
+Not amazing, right? but in Python 3 this is no problem, if you want to do this in Python 2, "xrange" is your friend, now you get basically the equivalent of Python 3 "range".
+Great, so if you really want to step through numbers, just use range, that gives you something that's iterable and you use that in a "for...in" loop.
+Yeah, so in some sense there is a way to do a numerical "for" loop, it's just not a language construct, it's an idiom.

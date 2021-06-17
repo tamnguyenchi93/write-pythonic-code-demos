@@ -1,0 +1,14 @@
+The next Pythonic tip I want to cover is about sending an exit code to indicate whether your application succeeded or failed.
+Let's have a look, so here I have a little utility app, meant to run on Windows and its job is to format the main drive C: and of course you don't want to just do that, just because the app was run, the script was run, you'd like a little confirmation, so here we ask the user "are you sure you want to format your main hard drive?" "Yes" or "no", you can see the default is "no" but if for some reason they type in "yes", and they come down here, we are going to simulate a little work, we are not actually going to format anyone's hard drive, and then we'll say "format completed".
+So let's run this.
+"Are you sure you want to format drive C?" Let's say "no", format canceled, now notice, exit code zero.
+Let's come down here and say "yes", I would love to format drive C, so we do a little bit of work, you can't format it immediately, it's hard job here, and then boom, formatted successfully, enjoy the new hard drive space.
+Now, we also got code zero, if I was trying to run this as a subprocess, or I was trying to orchestrate this by chaining it together, there is no way for me to know as a user of this script whether or not the user canceled or they actually formatted the hard drive.
+We can easily come up here before a return, we don't technically need to return, because this is going to actually stop executing immediately; anyway, I can go over here and I can import "sys", now I was already importing "sys" so that I could use this little flush command that normally I wouldn't have been there, so I'll say "sys.exit" and we are going to exit here with let's say 1, down here, we can do this, we can say "sys.exit(0)" of course, you saw if we don't do anything at all, "exit(0)" is what is going to happen, so maybe I'll leave this one off.
+Now, we also know that this is going to throw an exception so this "return" is actually unreachable, PyCharm told us that, OK so let's try again; "are you sure you want to format your main hard drive?" No.
+Exit code 1.
+Do you want to format your hard drive - oh please do, exit code 0.
+Again, canceled, exit code 1, perfect.
+So if there is any chance that your script is going to be called by other script or other applications you want to make sure that you indicate some kind of exit code so that they can use that information to determine whether or not they can continue whatever they are doing afterwards, whether or not your script succeeded.
+So if we just let our app, our script exit, well it's always code zero, but we can use "sys.exit" and give some kind of code, typically the convention is if it's non-zero there was some kind of either failure or abnormal exit whereas zero is "all systems nominal".
+Everything is good.
